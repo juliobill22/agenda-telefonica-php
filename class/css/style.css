@@ -1,0 +1,78 @@
+/* 
+    Created on : 26/10/2018, 23:33:15
+    Author     : juliobillschvenger
+*/
+
+.button-rodape {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+}
+
+.btn-width-heigt {
+    width: 50px;
+    height: 50px;
+}
+
+.media-body-cursor{
+    cursor: pointer;
+}
+
+#iframecontatoslist {
+    position: relative;
+    border: none;
+    left: 2%;
+    right: 2%;
+    height: 420PX;
+    width: 96%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#iframecontatoslist::-webkit-scrollbar { width:7px; background:#e3e0d6; }
+#iframecontatoslist::-webkit-scrollbar-track { background: rgba(0,0,0,0); }
+#iframecontatoslist::-webkit-scrollbar-thumb { border-radius:10px; background:#8b8778;  }
+
+#iframecontatosAd {
+    position: relative;
+    border: none;
+    height: 65%;
+    width: 100%;
+}
+
+#iframecontatosEd {
+    position: relative;
+    border: none;
+    height: 65%;
+    width: 100%;
+}
+
+.tblistcontatos:hover {
+    cursor: pointer;
+}
+
+#idnome {padding: 30px;}
+#idtelefone {padding: 30px;}
+#idemai {padding: 30px;}
+
+.style-edit {
+    padding: 20px;
+    margin: 6px;
+    position: relative;
+    width: 98%;
+}
+
+#errorContato, #errorNome, #errorTelefone, #errorEmail {
+    color: red;
+    font-size: 12px;
+    position: relative;
+    left: 2%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#id-menu-editar-excluir {
+    position: fixed;
+    right: 10%;
+    top: 2%;
+}

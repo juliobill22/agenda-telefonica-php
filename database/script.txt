@@ -1,0 +1,43 @@
+
+CREATE TABLE `usuario` (
+  `idusuario` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `senha` varchar(45) DEFAULT NULL,
+  `datainc` datetime DEFAULT NULL,
+  PRIMARY KEY (`idusuario`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `agenda` (
+  `idcontato` int(15) NOT NULL,
+  `nome` varchar(45) DEFAULT NULL,
+  `telefone` int(11) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idcontato`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+
+ALTER TABLE `agendadb`.`agenda` 
+AUTO_INCREMENT = 1 ,
+CHANGE COLUMN `idcontato` `idcontato` INT(15) NOT NULL ,
+ADD UNIQUE INDEX `idcontato_UNIQUE` (`idcontato` ASC);
+;
+
+
+INSERT INTO `agendadb`.`agenda` (`idcontato`, `nome`, `telefone`, `email`) VALUES ('14', 'abc', '123456', 'email@email.com');
+INSERT INTO `agendadb`.`usuario` (`idusuario`, `name`, `senha`, `datainc`) VALUES ('1', 'Julio', '123', '20181101');
+
+//conexão mysql
+$host="localhost";
+$port=3306;
+$socket="";
+$user="root";
+$password="";
+$dbname="agendadb";
+
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
+	or die ('Could not connect to the database server' . mysqli_connect_error());
+
+//$con->close();
+
+
