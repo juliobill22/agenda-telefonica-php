@@ -7,6 +7,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
         <link href="../class/css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../class/js/js-index.js"></script>
+
     </head>
     <body>
 
@@ -24,7 +28,7 @@
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="myBtnLg"><a><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li id="btn-login"><a id="a-link-login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
         </nav>
@@ -33,7 +37,7 @@
         <div class="media">
             <div class="media">
                 <p></p><br>
-                <div id="iframecontatoslist">
+                <div id="index-list-contatos">
                     <?php
                         require("./class/conection/database.php");
                         require("./class/DAO/contatoDAO.php");
@@ -46,7 +50,7 @@
 
         <!--FRAMES DE INCLUSÃO-->
         <div class="container">
-            <div class="modal fade" id="myModalInsert" role="dialog">
+            <div class="modal fade" id="modal-insert-contato" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -61,7 +65,7 @@
         </div>    
 
         <!--LOGIN-->
-        <div class="modal fade" id="mylogin" role="dialog">
+        <div class="modal fade" id="modal-login" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -75,7 +79,7 @@
         </div>        
         
         <!--FRAMES DE EDIÇÃO-->
-        <div class="modal fade" id="myModalEdit" role="dialog">
+        <div class="modal fade" id="modal-edit-contato" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -90,12 +94,11 @@
 
         <!--BOTÃO DE INCLUSÃO-->
         <div class="button-rodape">
-            <button id="myBtn" class="btn-width-heigt w3-button w3-circle w3-black glyphicon glyphicon-user">+</button>
+            <button id="btn-inc-contato" class="btn-width-heigt w3-button w3-circle w3-black glyphicon glyphicon-user">+</button>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="../class/js/js-index.js"></script>
         
     </body>
 </html>

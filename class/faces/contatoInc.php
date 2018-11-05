@@ -2,15 +2,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Título</title>
     </head>
     <body>
-        <form action="../../class/faces/contatoInc.php" method="post" class="form-group">
+        <form id="form-ed" action="../../class/faces/contatoInc.php" method="post" class="form-group">
             <div class="control-group">
                 <div class="controls">
-                    <p><input size= "50" id="incnome"  class="style-edit" name="a_nome"     type="text" placeholder="Nome"     autofocus  value="<?php echo!empty($nome)     ? $nome     : ""; ?>"></p><a id="errorNome"></a>
-                    <p><input size= "50" id="inctel"   class="style-edit" name="a_telefone" type="text" placeholder="Telefone" value="<?php echo!empty($telefone) ? $telefone : ""; ?>"></p><a id="errorTelefone"></a>
-                    <p><input size= "50" id="incemail" class="style-edit" name="a_email"    type="text" placeholder="E-mail"   value="<?php echo!empty($email)    ? $email    : ""; ?>"></p><a id="errorEmail"></a>
+                    <p><input size= "50" id="inc-nome"  class="style-edit" name="a_nome"     type="text"  placeholder="Nome"     autofocus required value="<?php echo!empty($nome) ? $nome : ""; ?>"></p><a id="ic-error-nome"></a>
+                    <p><input size= "50" id="inc-tel"   class="style-edit" name="a_telefone" type="tel"   placeholder="Telefone" required data-mask="(00) 00000-0000" value="<?php echo!empty($telefone) ? $telefone : ""; ?>"></p><a id="ic-error-telefone"></a>
+                    <p><input size= "50" id="inc-email" class="style-edit" name="a_email"    type="email" placeholder="E-mail"   required value="<?php echo!empty($email) ? $email : ""; ?>"></p><a id="ic-error-email"></a>
                 </div>
                 <div class="modal-footer">    
                     <p><button id="btnsalvar" type="submit" class="btn btn-default glyphicon glyphicon-ok"></button>
@@ -21,15 +20,9 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
         <script>
-            $("form").submit(function(){
-                $("#errorNome").text($("#incnome").val()    ? "" : "O nome não foi preenchido."    , "");
-                $("#errorTelefone").text($("#inctel").val() ? "" : "O telefone não foi preenchido.", "");
-                $("#errorEmail").text($("#incemail").val()  ? "" : "O e-mail não foi preenchido."  , "");
-                if ($("#incnome").val() == "") {return false;}
-                if ($("#inctel").val() == "") {return false;}
-                if ($("#incemail").val() == "") {return false;}
-            });        
+            $("#inc-tel").mask("(00) 00000-0000");
         </script>
 
     </body>

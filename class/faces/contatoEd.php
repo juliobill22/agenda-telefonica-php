@@ -25,24 +25,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-        <link href="../class/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <form action="../../class/faces/contatoEd.php" method="post" class="form-group">
             <div class="control-group">
                 <div class="controls">
-                   <div id="id-menu-editar-excluir" class="dropdown dropleft float-right">
-                      <button type="button" class="btn btn-default glyphicon glyphicon-th-list" data-toggle="dropdown"></button>
+                    <div id="id-menu-editar-excluir" class="dropdown dropleft float-right">
+                      <button type="button" class="btn btn-default glyphicon glyphicon-th-list" data-toggle="dropdown" aria-expanded="true"></button>
                       <div class="dropdown-menu">
-                          <button id="ed-excluir-item" type="submit" class="btn btn-default glyphicon glyphicon-ok"> Excluir</button>
+                          <a class="dropdown-item" href="../../class/faces/contatoDel.php?a_contato=<?php echo $contato?>">Excluir</a>
                       </div>
                     </div>                    
-                    <p><input style="visibility: hidden;" id="edcontato" name="a_contato"  type="text" value="<?php echo!empty($contato) ? $contato : ''; ?>">
-                    <p><input size= "50" id="ednome"  class="style-edit" name="a_nome"     type="text" placeholder="Nome"     value="<?php echo!empty($nome)     ? $nome     : ''; ?>"></p><a id="errorNome"></a>
-                    <p><input size= "50" id="edtel"   class="style-edit" name="a_telefone" type="text" placeholder="Telefone" value="<?php echo!empty($telefone) ? $telefone : ''; ?>"></p><a id="errorTelefone"></a>
-                    <p><input size= "50" id="edemail" class="style-edit" name="a_email"    type="text" placeholder="E-mail"   value="<?php echo!empty($email)    ? $email    : ''; ?>"></p><a id="errorEmail"></a>
+                    <p><input size= "50" id="ed-codigo" class="style-edit" name="a_contato"  type="text"  placeholder="Contato"  readonly value="<?php echo!empty($contato) ? $contato : ''; ?>"></p>
+                    <p><input size= "50" id="ed-nome"   class="style-edit" name="a_nome"     type="text"  placeholder="Nome"     autofocus required value="<?php echo!empty($nome) ? $nome : ''; ?>"></p>
+                    <p><input size= "50" id="ed-tel"    class="style-edit" name="a_telefone" type="tel"   placeholder="Telefone" required data-mask="(00) 00000-0000" value="<?php echo!empty($telefone) ? $telefone : ''; ?>"></p>
+                    <p><input size= "50" id="ed-email"  class="style-edit" name="a_email"    type="email" placeholder="E-mail"   required value="<?php echo!empty($email) ? $email : ''; ?>"></p>
                 </div>
                 <div class="modal-footer">    
                     <p><button id="btnsalvar" type="submit" class="btn btn-default glyphicon glyphicon-ok"></button>
@@ -54,16 +51,9 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
         <script>
-            $("form").submit(function(){
-                $("#errorNome").text($("#ednome").val()     ? '' : "O nome não foi preenchido."    , "");
-                $("#errorTelefone").text($("#edtel").val()  ? '' : "O telefone não foi preenchido.", "");
-                $("#errorEmail").text($("#edemail").val()   ? '' : "O e-mail não foi preenchido."  , "");
-                if ($("#ednome").val() == "") {return false;}
-                if ($("#edtel").val() == "") {return false;}
-                if ($("#edemail").val() == "") {return false;}
-            });
+            $("#ed-tel").mask("(00) 00000-0000");
         </script>
 
     </body>
@@ -106,12 +96,16 @@
             $cDAO = new contatoDAO();
             $cont = new pojoContato();
 
+            echo $contato;
+            
             $cont->setIdContato($contato);
             $cont->setNome($nome);
             $cont->setTelefone($telefone);
             $cont->setEmail($email);
             
             $cDAO->edit($cont);
+            
+            echo $cont->getIdContato();
             
             header('Location: /index.php');
             

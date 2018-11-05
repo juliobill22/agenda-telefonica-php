@@ -1,13 +1,17 @@
 <?php
 
-    require("./class/conection/database.php");
-    require("./class/DAO/contatoDAO.php");
-    require("./class/pojo/pojoContato.php");
-
     $contato  = "";
 
     if (!empty($_GET)) {
-        $contato  = $_GET['a_contato'];
-        contatoDAO::delete($contato);
-        //header('Location: /index.php');
+        $idcontato  = intval($_GET['a_contato']);
+        
+        include("../../class/conection/database.php");
+        include("../../class/DAO/contatoDAO.php");
+        include("../../class/pojo/pojoContato.php");
+        
+        $contato = new contatoDAO();
+        $contato->delete($idcontato);
+        
+        header('Location: /index.php');
+    
     }

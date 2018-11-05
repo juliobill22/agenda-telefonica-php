@@ -4,12 +4,12 @@
     $result = $contato->lists();
 
     if ($result->num_rows > 0) {
-        echo "<table class='table table-striped tblistcontatos'>";
+        echo "<table class='table table-striped tb-list-contatos'>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr id='" . $row["IDCONTATO"] . "'>"
-            . "<td id='idnome'>" . $row["NOME"] . "</td>"
-            . "<td id='idtelefone'>" . $row["TELEFONE"] . "</td>"
-            . "<td id='idemail'>" . $row["EMAIL"] . "</td>"
+            . "<td id='td-id-nome'>" . $row["NOME"] . "</td>"
+            . "<td id='td-id-telefone'>" . $row["TELEFONE"] . "</td>"
+            . "<td id='td-id-email'>" . $row["EMAIL"] . "</td>"
             . "</tr>";
         }
         echo "</table>";

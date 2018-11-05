@@ -21,6 +21,7 @@ class contatoDAO {
                     . $obj->getEmail()
                     . "');";
             $conn->query($sql);
+            echo $sql;
             echo "Nova contato criado com sucesso!";
         } catch (Exception $e) {
             echo $sql . "<br>" . $e->getMessage();
@@ -36,7 +37,6 @@ class contatoDAO {
                     . ", TELEFONE = '" . $obj->getTelefone() ."'"
                     . ", EMAIL = '" . $obj->getEmail() ."'"
                     . " WHERE (IDCONTATO = '" . $obj->getIdContato() ."')";
-            echo $sql;
             $conn->query($sql);
             echo "Contato alterado com sucesso!";
         } catch (Exception $e) {
@@ -49,7 +49,7 @@ class contatoDAO {
         try {
             $conn = database::openConection();
             $sql = " DELETE FROM AGENDA WHERE (IDCONTATO = '". $cod ."')";
-            return $sql->execute();
+            return $conn->query($sql);
         } catch (Exception $e) {
             echo $sql . "<br>" . $e->getMessage();
         }

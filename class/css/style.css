@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 
-#iframecontatoslist {
+#index-list-contatos {
     position: relative;
     border: none;
     left: 2%;
@@ -29,31 +29,21 @@
     overflow-x: hidden;
 }
 
-#iframecontatoslist::-webkit-scrollbar { width:7px; background:#e3e0d6; }
-#iframecontatoslist::-webkit-scrollbar-track { background: rgba(0,0,0,0); }
-#iframecontatoslist::-webkit-scrollbar-thumb { border-radius:10px; background:#8b8778;  }
+#index-list-contatos::-webkit-scrollbar { width:7px; background:#e3e0d6; }
+#index-list-contatos::-webkit-scrollbar-track { background: rgba(0,0,0,0); }
+#index-list-contatos::-webkit-scrollbar-thumb { border-radius:10px; background:#8b8778;  }
 
-#iframecontatosAd {
-    position: relative;
-    border: none;
-    height: 65%;
-    width: 100%;
-}
-
-#iframecontatosEd {
-    position: relative;
-    border: none;
-    height: 65%;
-    width: 100%;
-}
-
-.tblistcontatos:hover {
+.tb-list-contatos:hover {
     cursor: pointer;
 }
 
-#idnome {padding: 30px;}
-#idtelefone {padding: 30px;}
-#idemai {padding: 30px;}
+#a-link-login:hover {
+    cursor: pointer;
+}
+
+#td-id-nome {padding: 30px;}
+#td-id-telefone {padding: 30px;}
+#td-id-email {padding: 30px;}
 
 .style-edit {
     padding: 20px;
@@ -62,17 +52,9 @@
     width: 98%;
 }
 
-#errorContato, #errorNome, #errorTelefone, #errorEmail {
-    color: red;
-    font-size: 12px;
-    position: relative;
-    left: 2%;
-    padding: 0px;
-    margin: 0px;
-}
-
 #id-menu-editar-excluir {
     position: fixed;
     right: 10%;
     top: 2%;
+    padding: 0px 10px 0px 0px;
 }

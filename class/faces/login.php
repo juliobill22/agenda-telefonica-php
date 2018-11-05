@@ -5,7 +5,7 @@
         <title>Login</title>
     </head>
     <body>
-        <form action="../portal.php" method="post" class="form-group">
+        <form action="../../class/faces/portal.php" method="post" class="form-group">
             <div class="control-group">
                 <div class="controls">
                     <p><input size= "50" id="idusuario" class="style-edit" name="a_usuario"  type="text" placeholder="Usuario" value="<?php echo!empty($usuario)  ? $usuario  : ''; ?>" autofocus></p><a id="errorUsuario"></a>
