@@ -1,9 +1,6 @@
 Projeto em andamento
 Criação de CRUD em PHP utilizando banco de dados MySql.
 
-# Nesse projeto não estou usando caneta bic pra desclassificar ninguém.
-# Aqui eu uso a cabeça para desenvolver a aplicação e não a GUELA acompanhada da má intenção.
-
 # agenda-telefonica-php
 
 Implementação de uma agenda telefônica que atenda aos seguintes requisitos técnicos e de 
