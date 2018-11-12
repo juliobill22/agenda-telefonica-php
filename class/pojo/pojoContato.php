@@ -11,6 +11,8 @@ class pojoContato {
     private $nome;
     private $telefone;
     private $email;
+
+    public function __construct() {}
     
     public function getIdContato() {
         return $this->idcontato;

@@ -1,20 +1,22 @@
+﻿CREATE SCHEMA `agendadb` ;
 
-CREATE TABLE `usuario` (
+
+CREATE TABLE `agendadb`.`usuario` (
   `idusuario` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `senha` varchar(45) DEFAULT NULL,
   `datainc` datetime DEFAULT NULL,
   PRIMARY KEY (`idusuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE `agenda` (
+CREATE TABLE `agendadb`.`agenda` (
   `idcontato` int(15) NOT NULL,
   `nome` varchar(45) DEFAULT NULL,
-  `telefone` int(11) DEFAULT NULL,
+  `telefone` varchar(15) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idcontato`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 ALTER TABLE `agendadb`.`agenda` 
@@ -22,6 +24,11 @@ AUTO_INCREMENT = 1 ,
 CHANGE COLUMN `idcontato` `idcontato` INT(15) NOT NULL ,
 ADD UNIQUE INDEX `idcontato_UNIQUE` (`idcontato` ASC);
 ;
+
+ALTER TABLE `agendadb`.`agenda` 
+CHANGE COLUMN `idcontato` `idcontato` INT(15) NOT NULL AUTO_INCREMENT ;
+
+
 
 
 INSERT INTO `agendadb`.`agenda` (`idcontato`, `nome`, `telefone`, `email`) VALUES ('14', 'abc', '123456', 'email@email.com');
@@ -41,3 +48,5 @@ $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
 //$con->close();
 
 
+
+C:\JAVA\Python36-32\Scripts\;C:\JAVA\Python36-32\;C:\Users\NIAA\AppData\Local\Programs\Python\Launcher\;C:\Users\NIAA\AppData\Roaming\cabal\bin;C:\Program Files\Haskell Platform\bin;C:\Users\NIAA\AppData\Roaming\npm;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell

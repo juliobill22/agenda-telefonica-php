@@ -66,13 +66,15 @@
             include("../pojo/pojoContato.php");
 
             $cDAO = new contatoDAO();
-            $cont = new pojoContato();
+            $contato = new pojoContato();
             
-            $cont->setNome($nome);
-            $cont->setTelefone($telefone);
-            $cont->setEmail($email);
+            $contato->setNome($nome);
+            $contato->setTelefone($telefone);
+            $contato->setEmail($email);
             
-            $cDAO->insert($cont);
+            echo $contato->getEmail();
+            
+            $cDAO->insert($contato);
         
             header('Location: /index.php');
             

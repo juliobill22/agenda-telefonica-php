@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <title>Login</title>
     </head>
-    <body>
-        <form action="../../class/faces/portal.php" method="post" class="form-group">
+    <body ng-app="">
+        <form name="myForm" action="../../class/faces/portal.php" method="post" class="form-group">
             <div class="control-group">
                 <div class="controls">
-                    <p><input size= "50" id="idusuario" class="style-edit" name="a_usuario"  type="text" placeholder="Usuario" value="<?php echo!empty($usuario)  ? $usuario  : ''; ?>" autofocus></p><a id="errorUsuario"></a>
-                    <p><input size= "50" id="idsenha"   class="style-edit" name="a_senha"    type="text" placeholder="Senha"   value="<?php echo!empty($senha)    ? $senha    : ''; ?>"></p><a id="errorSenha"></a>
+                    <p><input ng-model="ngname"  required size= "50" id="idusuario" class="style-edit" name="a_usuario" type="text" placeholder="Usuario" value="<?php echo!empty($usuario)  ? $usuario  : ''; ?>" autofocus></p><a id="errorUsuario"></a>
+                    <p><input ng-model="ngsenha" required size= "50" id="idsenha"   class="style-edit" name="a_senha"   type="text" placeholder="Senha"   value="<?php echo!empty($senha)    ? $senha    : ''; ?>"></p><a id="errorSenha"></a>
                 </div>
                 <div class="modal-footer">    
                     <p><button id="btnlogar" type="submit" class="btn btn-default">Logar</button>

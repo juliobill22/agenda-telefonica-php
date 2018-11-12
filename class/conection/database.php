@@ -9,7 +9,7 @@ class database {
 
     private static $HOST = "localhost:3306";
     private static $USERNAME = "root";
-    private static $PASSWORD = "";
+    private static $PASSWORD = "root";
     private static $DB = "agendadb";
     private static $conn = null;
 
